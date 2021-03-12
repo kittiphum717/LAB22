@@ -15,16 +15,33 @@ void printList(list<string> s){
 int main(){
 	
 	list<string> line_up;
-	list<string>::iterator loc;
+	list<string>::iterator loc1;
+	list<string>::iterator loc2;
+	list<string>::iterator loc3;
 	
 	line_up.push_back("Alice");
 	line_up.push_back("Bob");
 	
-	loc = find(line_up.begin(),line_up.end(),"Bob");
-	line_up.insert(loc,"Oscar");
+	loc1 = find(line_up.begin(),line_up.end(),"Bob");
+	line_up.insert(loc1,"Oscar");
 	
 	//Write your code here
-	
+	line_up.push_back("Luffy");
+	line_up.push_back("Sanji");
+	line_up.push_back("Nami");
+	line_up.pop_front();
+	line_up.pop_front();
+	loc2 = find(line_up.begin(),line_up.end(),"Luffy");
+	line_up.insert(++loc2,"Narutu");
+	line_up.push_front("Prayath");
+	loc3 = find(line_up.begin(),line_up.end(),"Prayath");
+	line_up.insert(loc3++,"Tony");
+	loc1 = find(line_up.begin(),line_up.end(),"Bob");
+	line_up.erase(loc1);
+	line_up.pop_front();
+	line_up.pop_front();
+	line_up.pop_front();
+
 	printList(line_up);
 		
 	return 0;
